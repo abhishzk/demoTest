@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import model.Products;
-import repository.ProductsRepository;
+import service.repository.ProductsRepository;
 
 @Service
 
@@ -16,9 +16,10 @@ public class ProductsService {
     @Autowired
     ProductsRepository productsRepository;
 
-    public List<Products> getAllProducts() {
+    public static List<Products> getAllProducts()
+    {
         List<Products> Products = new ArrayList<Products>();
-        productsRepository.findAll().forEach(products1);
+       // ProductsRepository.findAll().forEach(products1 -> products.add(products1));
         return Products;
     }
 
